@@ -96,6 +96,51 @@
   gap: 20px;
 }
 
+.halftone-image {
+  width: 200px;
+  height: 200px;
+  background-image: url('/assets/dom.png');
+  background-size: cover;
+  background-position: center;
+  filter: contrast(150%) grayscale(100%);
+  image-rendering: pixelated;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.halftone-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-radial-gradient(circle at 0 0, transparent 0, #000 2px, transparent 4px),
+    repeating-radial-gradient(circle at 50% 50%, #00ff00 0, transparent 1px, transparent 2px);
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.halftone-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 0, 0.1) 2px,
+      rgba(0, 255, 0, 0.1) 4px
+    );
+  pointer-events: none;
+}
+
 .no-emails {
   width: 100%;
   max-width: 500px;

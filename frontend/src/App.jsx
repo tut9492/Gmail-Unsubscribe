@@ -162,8 +162,8 @@ function App() {
     return (
       <div className="app-container">
         <div className="header">
-          <h1>GMAIL UNSUBSCRIBE</h1>
-          <p>SPAM ELIMINATION SYSTEM</p>
+          <h1>UNSUB ME</h1>
+          <p>I'M THE DOM NOW</p>
         </div>
         <div className="login-container">
           <div className="win95-window">
@@ -193,8 +193,8 @@ function App() {
     return (
       <div className="app-container">
         <div className="header">
-          <h1>GMAIL UNSUBSCRIBE</h1>
-          <p>SPAM ELIMINATION SYSTEM</p>
+          <h1>UNSUB ME</h1>
+          <p>I'M THE DOM NOW</p>
         </div>
         <div className="loading-container">
           <div className="win95-window">
@@ -203,6 +203,7 @@ function App() {
             </div>
             <div className="win95-content">
               <div className="loading-content">
+                <div className="halftone-image"></div>
                 <div className="loading-spinner"></div>
                 <p>SCANNING INBOX FOR SPAM SUBSCRIPTIONS...</p>
               </div>
