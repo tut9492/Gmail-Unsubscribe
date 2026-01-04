@@ -216,8 +216,8 @@ function App() {
   return (
     <div className="app-container">
       <div className="header">
-        <h1>GMAIL UNSUBSCRIBE</h1>
-        <p>SPAM ELIMINATION SYSTEM</p>
+        <h1>UNSUB ME</h1>
+        <p>I'M THE DOM NOW</p>
       </div>
 
       <div className="stats-container">
