@@ -122,6 +122,22 @@ function App() {
     setEmails(emails.filter(email => email.id !== emailId))
   }
 
+  // Calculate top spammers
+  const getTopSpammers = () => {
+    const senderCounts = {}
+    emails.forEach(email => {
+      // Extract email domain or sender name
+      const fromMatch = email.from.match(/<(.+?)>/) || email.from.match(/([^\s<>]+@[^\s<>]+)/)
+      const sender = fromMatch ? fromMatch[1] : email.from
+      senderCounts[sender] = (senderCounts[sender] || 0) + 1
+    })
+
+    return Object.entries(senderCounts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5)
+      .map(([sender, count]) => ({ sender, count }))
+  }
+
   if (loading) {
     return (
       <div className="app-container">
@@ -230,6 +246,30 @@ function App() {
           </div>
         </div>
       </div>
+
+      {emails.length > 0 && (
+        <div className="stats-container">
+          <div className="win95-window stats-window" style={{ maxWidth: '600px' }}>
+            <div className="win95-title-bar">
+              <div className="win95-title-text">
+                <span>🔥</span>
+                <span>TOP SPAMMERS</span>
+              </div>
+            </div>
+            <div className="win95-content">
+              <div className="stats-content">
+                {getTopSpammers().map((spammer, index) => (
+                  <div key={spammer.sender} className="stat-item spammer-item">
+                    <span className="spammer-rank">#{index + 1}</span>
+                    <span className="spammer-email">{spammer.sender}</span>
+                    <span className="spammer-count">{spammer.count} emails</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {emails.length === 0 ? (
         <div className="no-emails">

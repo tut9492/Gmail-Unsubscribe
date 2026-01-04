@@ -135,3 +135,33 @@
 .stat-value {
   color: #000080;
 }
+
+.spammer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.spammer-rank {
+  font-weight: bold;
+  color: #ff0000;
+  min-width: 35px;
+}
+
+.spammer-email {
+  flex: 1;
+  font-size: 18px;
+  word-break: break-all;
+  color: #000080;
+}
+
+.spammer-count {
+  font-weight: bold;
+  color: #000000;
+  white-space: nowrap;
+  background: #ffff00;
+  padding: 2px 6px;
+  border: 1px solid #000000;
+}
