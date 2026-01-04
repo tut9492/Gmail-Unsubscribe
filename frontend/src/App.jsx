@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
+import domImage from './assets/dom.png'
 
 const API_URL = 'http://localhost:3001'
 
@@ -203,7 +204,7 @@ function App() {
             </div>
             <div className="win95-content">
               <div className="loading-content">
-                <img src="/assets/dom.png" alt="Loading" className="halftone-image" />
+                <img src={domImage} alt="Loading" className="halftone-image" />
                 <div className="loading-spinner"></div>
                 <p>SCANNING INBOX FOR SPAM SUBSCRIPTIONS...</p>
               </div>
