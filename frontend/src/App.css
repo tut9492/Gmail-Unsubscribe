@@ -99,10 +99,7 @@
 .halftone-image {
   width: 200px;
   height: 200px;
-  background-image: url('/assets/dom.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  object-fit: contain;
   margin-bottom: 20px;
 }
 

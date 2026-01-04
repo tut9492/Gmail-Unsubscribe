@@ -203,7 +203,7 @@ function App() {
             </div>
             <div className="win95-content">
               <div className="loading-content">
-                <div className="halftone-image"></div>
+                <img src="/assets/dom.png" alt="Loading" className="halftone-image" />
                 <div className="loading-spinner"></div>
                 <p>SCANNING INBOX FOR SPAM SUBSCRIPTIONS...</p>
               </div>
