@@ -56,6 +56,17 @@ cd Gmail-Unsubscribe
 
 ### Step 4: Configure and Run
 
+**⚠️ IMPORTANT - Keep Your Credentials Private:**
+
+Your `.env` file contains your Google API credentials and is **automatically ignored by git**. This means:
+- ✅ Your credentials will NEVER be pushed to GitHub
+- ✅ Each person who clones this repo must add their own credentials
+- ✅ Your Gmail data stays on your machine only
+
+The `.env` file is already in `.gitignore` - just make sure you NEVER remove it from there!
+
+---
+
 **Set up backend:**
 ```bash
 cd backend
@@ -155,11 +166,30 @@ Gmail-Unsubscribe/
 
 ## 🔒 Privacy & Security
 
+**Your data is 100% private. Here's how:**
+
 - **OAuth 2.0** - Industry standard authentication
-- **Local only** - Tokens stored on your machine
-- **Read-only access** - Only reads emails, never sends
-- **No tracking** - Zero data collection
+- **Local only** - All tokens and credentials stored ONLY on your machine
+- **Read-only access** - Only reads emails, never sends or deletes
+- **No tracking** - Zero data collection, no analytics, no telemetry
 - **Open source** - Review all the code yourself
+
+**Protected files (never committed to git):**
+- `.env` - Your Google API credentials
+- `token.json` - Your OAuth tokens
+- `credentials.json` - Any credential files
+
+**What IS in the public repo:**
+- `.env.example` - Template file with NO credentials
+- Source code only
+- Documentation
+
+**Each person must:**
+1. Get their own Google API credentials
+2. Create their own `.env` file
+3. Authenticate with their own Gmail account
+
+Your credentials and emails are NEVER shared or stored anywhere except your local machine.
 
 ---
 
