@@ -4,11 +4,15 @@
   "description": "Gmail unsubscribe tool with retro Windows 95/98 UI",
   "scripts": {
     "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:backend": "cd backend && npm start",
     "dev:frontend": "cd frontend && npm run dev",
-    "dev": "echo 'Please run backend and frontend in separate terminals:' && echo '  Terminal 1: npm run dev:backend' && echo '  Terminal 2: npm run dev:frontend'"
+    "start": "npm run dev"
   },
   "keywords": ["gmail", "unsubscribe", "windows95", "retro"],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
